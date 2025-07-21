@@ -1,7 +1,7 @@
-import { defineConfig, fontProviders } from "astro/config"
-import tailwindcss from "@tailwindcss/vite"
-import robots from "astro-robots"
-import sitemap from "@astrojs/sitemap"
+import { defineConfig, fontProviders } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
+import robots from "astro-robots";
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "http://localhost:3000",
@@ -21,4 +21,4 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [sitemap(), robots()],
-})
+});

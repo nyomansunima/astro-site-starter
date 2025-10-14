@@ -1,16 +1,36 @@
 import {
   astro,
   combine,
+  comments,
   ignores,
   imports,
   javascript,
+  jsdoc,
+  jsonc,
+  markdown,
+  node,
+  sortPackageJson,
+  sortTsconfig,
+  toml,
   typescript,
-} from "@antfu/eslint-config";
+  unicorn,
+  yaml,
+} from "@antfu/eslint-config"
 
 export default combine(
   ignores(),
   javascript(),
+  comments(),
+  node(),
+  jsdoc(),
   imports(),
+  unicorn(),
   typescript(),
   astro(),
-);
+  jsonc(),
+  yaml(),
+  toml(),
+  markdown(),
+  sortPackageJson(),
+  sortTsconfig(),
+)

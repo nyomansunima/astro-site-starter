@@ -17,8 +17,8 @@ permissions:
   pull-requests: write
 
 jobs:
-  typecheck:
-    name: Typecheck
+  check:
+    name: Check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
@@ -34,39 +34,3 @@ jobs:
 
       - name: Check the code
         run: bun run check
-
-  format:
-    name: Format code
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout the code
-        uses: actions/checkout@v5
-
-      - name: Setup bun environment
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
-      - name: Install dependencies
-        run: bun install
-
-      - name: Format the code
-        run: bun run format
-
-  lint:
-    name: Lint code
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout the code
-        uses: actions/checkout@v5
-
-      - name: Setup bun environment
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
-      - name: Install dependencies
-        run: bun install
-
-      - name: Lint the code
-        run: bun run lint
